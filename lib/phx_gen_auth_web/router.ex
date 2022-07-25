@@ -61,6 +61,8 @@ defmodule PhxGenAuthWeb.Router do
 
   scope "/", PhxGenAuthWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
+    get "/auth/:provider/", UserOauthController, :request
+    get "/auth/:provider/callback", UserOauthController, :callback
 
     get "/users/register", UserRegistrationController, :new
     post "/users/register", UserRegistrationController, :create

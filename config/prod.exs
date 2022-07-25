@@ -11,6 +11,11 @@ import Config
 # before starting your production server.
 config :phx_gen_auth, PhxGenAuthWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
 
+config :ueberauth, Ueberauth
+  providers: [
+    google: {Ueberauth.Strategy.Google, []}
+  ]
+
 # Do not print debug messages in production
 config :logger, level: :info
 

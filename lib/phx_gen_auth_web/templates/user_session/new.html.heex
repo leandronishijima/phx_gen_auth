@@ -16,6 +16,8 @@
   <%= label f, :remember_me, "Keep me logged in for 60 days" %>
   <%= checkbox f, :remember_me %>
 
+  <%= link "LOGIN WITH GOOGLE", to: Routes.user_oauth_path(@conn, :request, "google") %>
+
   <div>
     <%= submit "Log in" %>
   </div>
